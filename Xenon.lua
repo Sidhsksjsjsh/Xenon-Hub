@@ -9622,7 +9622,8 @@ PvP_Tab:Label("No Cooldown & Infinity")
 PvP_Tab:Toggle("Soru No Cooldown","9606294253",_G.Setting_table.Sorunocool,function(vu)
 	Sorunocool = vu
 	_G.Setting_table.Sorunocool = vu
-	if vu then
+	while wait() do
+	if Sorunocool == false then break end
 		NoSoruCool()
 	end
 	Update_Setting(getgenv()['MyName'])
@@ -9646,7 +9647,8 @@ PvP_Tab:Toggle("Dodge No Cooldown","9606294253",_G.Setting_table.Dodge_No_Cooldo
 	nododgecool = vu
 	_G.Setting_table.Dodge_No_Cooldown  = vu
 	Update_Setting(getgenv()['MyName'])
-    if vu then
+	while wait() do
+    if nododgecool == false then break end
         NoDodgeCool()
     end
 end)
@@ -9671,7 +9673,8 @@ PvP_Tab:Toggle("Infinity Geppo","9606294253",_G.Setting_table.Infinity_Geppo,fun
 	noGeppocool = vu
 	_G.Setting_table.Infinity_Geppo = vu
 	Update_Setting(getgenv()['MyName'])
-    if vu then
+	while wait() do
+    if noGeppocool == false then break end
         NoGeppoCool()
     end
 end)
@@ -9694,7 +9697,8 @@ function NoGeppoCool()
 end
 PvP_Tab:Toggle("Infinity Energy","9606294253",_G.Setting_table.InfinitsEnergy,function(vu)
 	InfinitsEnergy = vu
-	if vu then
+	while wait() do
+	if InfinitsEnergy == false then break end
 		infinitestam()
 	end
 	_G.Setting_table.InfinitsEnergy = vu
@@ -9752,7 +9756,8 @@ PvP_Tab:Label("Bounty")
 	end)
 	PvP_Tab:Toggle("Aimbot Gun","9606294253",false,function(vu)
 		Aimbot = vu
-		if vu then
+		while wait() do
+		if Aimbot == false then break end
 			for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
 				if v:IsA("Tool") then
 					if v:FindFirstChild("RemoteFunctionShoot") then 
@@ -9771,7 +9776,8 @@ PvP_Tab:Label("Bounty")
 	end)
 	PvP_Tab:Toggle("Aimbot Skill","9606294253",false,function(vu)
 		Skillaimbot = vu
-		if Skillaimbot then
+		while wait() do
+		if Skillaimbot == false then break end
 			if game.Players:FindFirstChild(SelectedKillPlayer) and game.Players:FindFirstChild(SelectedKillPlayer).Character:FindFirstChild("HumanoidRootPart") and game.Players:FindFirstChild(SelectedKillPlayer).Character:FindFirstChild("Humanoid") and game.Players:FindFirstChild(SelectedKillPlayer).Character.Humanoid.Health > 0 then
 				AimBotSkillPosition = game.Players:FindFirstChild(SelectedKillPlayer).Character:FindFirstChild("HumanoidRootPart").Position
 			end
