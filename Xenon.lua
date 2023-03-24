@@ -9622,10 +9622,9 @@ PvP_Tab:Label("No Cooldown & Infinity")
 PvP_Tab:Toggle("Soru No Cooldown","9606294253",_G.Setting_table.Sorunocool,function(vu)
 	Sorunocool = vu
 	_G.Setting_table.Sorunocool = vu
-	while wait() do
-	if Sorunocool == false then break end
+	repeat wait()
 		NoSoruCool()
-	end
+	until Sorunocool == false
 	Update_Setting(getgenv()['MyName'])
 end)
 function NoSoruCool()
@@ -9647,10 +9646,9 @@ PvP_Tab:Toggle("Dodge No Cooldown","9606294253",_G.Setting_table.Dodge_No_Cooldo
 	nododgecool = vu
 	_G.Setting_table.Dodge_No_Cooldown  = vu
 	Update_Setting(getgenv()['MyName'])
-	while wait() do
-    if nododgecool == false then break end
+	repeat wait()
         NoDodgeCool()
-    end
+    until nododgecool == false
 end)
 	function NoDodgeCool()
 		if nododgecool then
@@ -9673,10 +9671,9 @@ PvP_Tab:Toggle("Infinity Geppo","9606294253",_G.Setting_table.Infinity_Geppo,fun
 	noGeppocool = vu
 	_G.Setting_table.Infinity_Geppo = vu
 	Update_Setting(getgenv()['MyName'])
-	while wait() do
-    if noGeppocool == false then break end
+	repeat wait()
         NoGeppoCool()
-    end
+    until noGeppocool == false
 end)
 function NoGeppoCool()
     if noGeppocool then
@@ -9697,10 +9694,9 @@ function NoGeppoCool()
 end
 PvP_Tab:Toggle("Infinity Energy","9606294253",_G.Setting_table.InfinitsEnergy,function(vu)
 	InfinitsEnergy = vu
-	while wait() do
-	if InfinitsEnergy == false then break end
+	repeat wait()
 		infinitestam()
-	end
+	until InfinitsEnergy == false
 	_G.Setting_table.InfinitsEnergy = vu
 	Update_Setting(getgenv()['MyName'])
 end)
@@ -9756,8 +9752,7 @@ PvP_Tab:Label("Bounty")
 	end)
 	PvP_Tab:Toggle("Aimbot Gun","9606294253",false,function(vu)
 		Aimbot = vu
-		while wait() do
-		if Aimbot == false then break end
+		repeat wait()
 			for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
 				if v:IsA("Tool") then
 					if v:FindFirstChild("RemoteFunctionShoot") then 
@@ -9772,16 +9767,15 @@ PvP_Tab:Label("Bounty")
 					end
 				end
 			end
-		end
+		until Aimbot == false
 	end)
 	PvP_Tab:Toggle("Aimbot Skill","9606294253",false,function(vu)
 		Skillaimbot = vu
-		while wait() do
-		if Skillaimbot == false then break end
+		repeat wait()
 			if game.Players:FindFirstChild(SelectedKillPlayer) and game.Players:FindFirstChild(SelectedKillPlayer).Character:FindFirstChild("HumanoidRootPart") and game.Players:FindFirstChild(SelectedKillPlayer).Character:FindFirstChild("Humanoid") and game.Players:FindFirstChild(SelectedKillPlayer).Character.Humanoid.Health > 0 then
 				AimBotSkillPosition = game.Players:FindFirstChild(SelectedKillPlayer).Character:FindFirstChild("HumanoidRootPart").Position
 			end
-		end
+		until Skillaimbot == false
 	end)
 	local lp = game:GetService('Players').LocalPlayer
 	local mouse = lp:GetMouse()
