@@ -3715,7 +3715,7 @@ General_Tab:Toggle("Auto Farm","9606294253",_G.Setting_table.AutoFarm,function(v
 end)
 	local plr = game.Players.LocalPlayer
 	local CbFw = getupvalues(require(plr.PlayerScripts.CombatFramework))
-	local CbFw2 = CbFw[2]
+	local CbFw2 = CbFw
 
     function GetCurrentBlade() 
         local p13 = CbFw2.activeController
