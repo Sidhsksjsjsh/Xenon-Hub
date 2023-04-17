@@ -3708,22 +3708,22 @@ local Esp_Tab = win:Tab("ESP",[[9606628205]])
 local Hop_Tab = win:Tab("Hop",[[9608089732]])
 General_Tab:Label("Farm Level")
 
-General_Tab:Toggle("Auto Farm","9606294253",_G.Setting_table.AutoFarm,function(vu)
-	Auto_Farm = vu
-	_G.Setting_table.AutoFarm = vu
-	Update_Setting(getgenv()['MyName'])
-end)
-	local plr = game.Players.LocalPlayer
-	local CbFw = getupvalues(require(plr.PlayerScripts.CombatFramework))
-	local CbFw2 = CbFw
+-- General_Tab:Toggle("Auto Farm","9606294253",_G.Setting_table.AutoFarm,function(vu)
+--	Auto_Farm = vu
+--	_G.Setting_table.AutoFarm = vu
+--	Update_Setting(getgenv()['MyName'])
+-- end)
+--	local plr = game.Players.LocalPlayer
+--	local CbFw = getupvalues(require(plr.PlayerScripts.CombatFramework))
+--	local CbFw2 = CbFw
 
-    function GetCurrentBlade() 
-        local p13 = CbFw2.activeController
-        local ret = p13.blades[1]
-        if not ret then return end
-        while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-        return ret
-    end
+--    function GetCurrentBlade() 
+--    local p13 = CbFw2.activeController
+--        local ret = p13.blades[1]
+--        if not ret then return end
+--        while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
+--        return ret
+--    end
     
     function AttackNoCD()
         if not Auto_Farm_Bounty and not Auto_Farm_Fruit or Mix_Farm then
